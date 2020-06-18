@@ -14,13 +14,6 @@ var knex = require("knex")({
   },
 });
 
-// knex
-//   .select("*")
-//   .from("users")
-//   .then((data) => {
-//     console.log(data);
-//   });
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -110,7 +103,6 @@ app.post("/register", (req, res) => {
 
 app.get("/profile/:id", (req, res) => {
   const { id } = req.params;
-
   knex
     .select("*")
     .from("users")
